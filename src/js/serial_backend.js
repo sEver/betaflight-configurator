@@ -54,7 +54,7 @@ function disconnectHandler(event) {
 }
 
 export function initializeSerialBackend() {
-    $("div.connect_controls a.connect").on("click", connectDisconnect);
+    $("div.connection_controls a.connect").on("click", connectDisconnect);
 
     EventBus.$on("port-handler:auto-select-serial-device", function (device) {
         if (
@@ -116,7 +116,7 @@ function connectDisconnect() {
 
             // lock port select & baud while we are connecting / connected
             PortHandler.portPickerDisabled = true;
-            $("div.connect_controls div.connect_state").text(i18n.getMessage("connecting"));
+            $("div.connection_controls div.connect_state").text(i18n.getMessage("connecting"));
 
             CONFIGURATOR.virtualMode = selectedPort === "virtual";
             CONFIGURATOR.bluetoothMode = selectedPort.startsWith("bluetooth");
@@ -202,8 +202,8 @@ function finishClose(finishedCallback) {
     PortHandler.portPickerDisabled = false;
 
     // reset connect / disconnect button
-    $("div.connect_controls a.connect").removeClass("active");
-    $("div.connect_controls div.connect_state").text(i18n.getMessage("connect"));
+    $("div.connection_controls a.connect").removeClass("active");
+    $("div.connection_controls div.connect_state").text(i18n.getMessage("connect"));
 
     // reset active sensor indicators
     sensor_status();

@@ -136,7 +136,7 @@ presets.disconnectCliMakeSure = function () {
     GUI.timeout_add(
         "disconnect",
         function () {
-            $("div.connect_controls a.connect").trigger("click");
+            $("div.connection_controls a.connect").trigger("click");
         },
         500,
     );

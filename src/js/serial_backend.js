@@ -116,7 +116,7 @@ function connectDisconnect() {
 
             // lock port select & baud while we are connecting / connected
             PortHandler.portPickerDisabled = true;
-            $("div.connection_button_wrapper div.connection_button_label").text(i18n.getMessage("connecting"));
+            $("div.connection_button_wrapper div.connection_button__label").text(i18n.getMessage("connecting"));
 
             CONFIGURATOR.virtualMode = selectedPort === "virtual";
             CONFIGURATOR.bluetoothMode = selectedPort.startsWith("bluetooth");
@@ -203,7 +203,7 @@ function finishClose(finishedCallback) {
 
     // reset connect / disconnect button
     $("div.connection_button_wrapper a.connection_button__link").removeClass("active");
-    $("div.connection_button_wrapper div.connection_button_label").text(i18n.getMessage("connect"));
+    $("div.connection_button_wrapper div.connection_button__label").text(i18n.getMessage("connect"));
 
     // reset active sensor indicators
     sensor_status();
@@ -238,7 +238,7 @@ function setConnectionTimeout() {
 
 function resetConnection() {
     // reset connect / disconnect button
-    $("div#connectbutton div.connection_button_label").text(i18n.getMessage("connect"));
+    $("div#connectbutton div.connection_button__label").text(i18n.getMessage("connect"));
     $("div#connectbutton a.connection_button__link").removeClass("active");
 
     CONFIGURATOR.connectionValid = false;
@@ -641,7 +641,7 @@ function onConnect() {
 
     GUI.timeout_remove("connecting"); // kill connecting timer
 
-    $("div#connectbutton div.connection_button_label").text(i18n.getMessage("disconnect")).addClass("active");
+    $("div#connectbutton div.connection_button__label").text(i18n.getMessage("disconnect")).addClass("active");
     $("div#connectbutton a.connection_button__link").addClass("active");
 
     $("#tabs ul.mode-disconnected").hide();

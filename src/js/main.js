@@ -132,13 +132,13 @@ function startProcess() {
     });
 
     $("div.firmware_flasher_button_wrapper a.firmware_flasher_button__link").on("click", function () {
-        if ($("div#flashbutton a.firmware_flasher_button_label").hasClass("active") && $("div#flashbutton a.firmware_flasher_button__link").hasClass("active")) {
-            $("div#flashbutton a.firmware_flasher_button_label").removeClass("active");
+        if ($("div#flashbutton a.firmware_flasher_button__label").hasClass("active") && $("div#flashbutton a.firmware_flasher_button__link").hasClass("active")) {
+            $("div#flashbutton a.firmware_flasher_button__label").removeClass("active");
             $("div#flashbutton a.firmware_flasher_button__link").removeClass("active");
             $("#tabs ul.mode-disconnected .tab_landing a").click();
         } else {
             $("#tabs ul.mode-disconnected .tab_firmware_flasher a").click();
-            $("div#flashbutton a.firmware_flasher_button_label").addClass("active");
+            $("div#flashbutton a.firmware_flasher_button__label").addClass("active");
             $("div#flashbutton a.firmware_flasher_button__link").addClass("active");
         }
     });
@@ -182,10 +182,10 @@ function startProcess() {
             GUI.tab_switch_cleanup(function () {
                 // disable active firmware flasher if it was active
                 if (
-                    $("div#flashbutton a.firmware_flasher_button_label").hasClass("active") &&
+                    $("div#flashbutton a.firmware_flasher_button__label").hasClass("active") &&
                     $("div#flashbutton a.firmware_flasher_button__link").hasClass("active")
                 ) {
-                    $("div#flashbutton a.firmware_flasher_button_label").removeClass("active");
+                    $("div#flashbutton a.firmware_flasher_button__label").removeClass("active");
                     $("div#flashbutton a.firmware_flasher_button__link").removeClass("active");
                 }
                 // disable previously active tab highlight

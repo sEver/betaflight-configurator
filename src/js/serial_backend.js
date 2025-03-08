@@ -238,8 +238,8 @@ function setConnectionTimeout() {
 
 function resetConnection() {
     // reset connect / disconnect button
-    $("div#connectbutton div.connection_button__label").text(i18n.getMessage("connect"));
-    $("div#connectbutton a.connection_button__link").removeClass("active");
+    $("div.connection_button div.connection_button__label").text(i18n.getMessage("connect"));
+    $("div.connection_button a.connection_button__link").removeClass("active");
 
     CONFIGURATOR.connectionValid = false;
     CONFIGURATOR.cliValid = false;
@@ -641,8 +641,8 @@ function onConnect() {
 
     GUI.timeout_remove("connecting"); // kill connecting timer
 
-    $("div#connectbutton div.connection_button__label").text(i18n.getMessage("disconnect")).addClass("active");
-    $("div#connectbutton a.connection_button__link").addClass("active");
+    $("div.connection_button div.connection_button__label").text(i18n.getMessage("disconnect")).addClass("active");
+    $("div.connection_button a.connection_button__link").addClass("active");
 
     $("#tabs ul.mode-disconnected").hide();
     $("#tabs ul.mode-connected-cli").show();

@@ -50,8 +50,8 @@ function setupAnalytics(result) {
 
     tracking.sendEvent(tracking.EVENT_CATEGORIES.APPLICATION, "AppStart", { sessionControl: "start" });
 
-    $(".connection_button a.connection_button__link").removeClass("disabled");
-    $(".firmware_flasher_button a.firmware_flasher_button__link").removeClass("disabled");
+    $("a.connection_button__link").removeClass("disabled");
+    $("a.firmware_flasher_button__link").removeClass("disabled");
 }
 
 export function checkSetupAnalytics(callback) {

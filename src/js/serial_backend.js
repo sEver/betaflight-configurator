@@ -634,8 +634,8 @@ function connectCli() {
 }
 
 function onConnect() {
-    if ($("div#flashbutton a.flash_button_label").hasClass("active") || $("div#flashbutton a.flash").hasClass("active")) {
-        $("div#flashbutton a.flash_button_label").removeClass("active");
+    if ($("div#flashbutton a.firmware_flasher_button_label").hasClass("active") || $("div#flashbutton a.flash").hasClass("active")) {
+        $("div#flashbutton a.firmware_flasher_button_label").removeClass("active");
         $("div#flashbutton a.flash").removeClass("active");
     }
 

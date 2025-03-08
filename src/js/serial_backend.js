@@ -634,9 +634,9 @@ function connectCli() {
 }
 
 function onConnect() {
-    if ($("div#flashbutton a.firmware_flasher_button_label").hasClass("active") || $("div#flashbutton a.firmware_flasher_button").hasClass("active")) {
+    if ($("div#flashbutton a.firmware_flasher_button_label").hasClass("active") || $("div#flashbutton a.firmware_flasher_button__link").hasClass("active")) {
         $("div#flashbutton a.firmware_flasher_button_label").removeClass("active");
-        $("div#flashbutton a.firmware_flasher_button").removeClass("active");
+        $("div#flashbutton a.firmware_flasher_button__link").removeClass("active");
     }
 
     GUI.timeout_remove("connecting"); // kill connecting timer

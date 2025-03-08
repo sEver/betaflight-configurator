@@ -54,7 +54,7 @@ function disconnectHandler(event) {
 }
 
 export function initializeSerialBackend() {
-    $("div.connection_button a.connection_button__link").on("click", connectDisconnect);
+    $("a.connection_button__link").on("click", connectDisconnect);
 
     EventBus.$on("port-handler:auto-select-serial-device", function (device) {
         if (
@@ -116,7 +116,7 @@ function connectDisconnect() {
 
             // lock port select & baud while we are connecting / connected
             PortHandler.portPickerDisabled = true;
-            $("div.connection_button div.connection_button__label").text(i18n.getMessage("connecting"));
+            $("div.connection_button__label").text(i18n.getMessage("connecting"));
 
             CONFIGURATOR.virtualMode = selectedPort === "virtual";
             CONFIGURATOR.bluetoothMode = selectedPort.startsWith("bluetooth");
@@ -202,8 +202,8 @@ function finishClose(finishedCallback) {
     PortHandler.portPickerDisabled = false;
 
     // reset connect / disconnect button
-    $("div.connection_button a.connection_button__link").removeClass("active");
-    $("div.connection_button div.connection_button__label").text(i18n.getMessage("connect"));
+    $("a.connection_button__link").removeClass("active");
+    $("div.connection_button__label").text(i18n.getMessage("connect"));
 
     // reset active sensor indicators
     sensor_status();
@@ -238,8 +238,8 @@ function setConnectionTimeout() {
 
 function resetConnection() {
     // reset connect / disconnect button
-    $("div.connection_button div.connection_button__label").text(i18n.getMessage("connect"));
-    $("div.connection_button a.connection_button__link").removeClass("active");
+    $("div.connection_button__label").text(i18n.getMessage("connect"));
+    $("a.connection_button__link").removeClass("active");
 
     CONFIGURATOR.connectionValid = false;
     CONFIGURATOR.cliValid = false;
@@ -634,15 +634,15 @@ function connectCli() {
 }
 
 function onConnect() {
-    if ($("div.firmware_flasher_button a.firmware_flasher_button__label").hasClass("active") || $("div.firmware_flasher_button a.firmware_flasher_button__link").hasClass("active")) {
-        $("div.firmware_flasher_button a.firmware_flasher_button__label").removeClass("active");
-        $("div.firmware_flasher_button a.firmware_flasher_button__link").removeClass("active");
+    if ($("a.firmware_flasher_button__label").hasClass("active") || $("a.firmware_flasher_button__link").hasClass("active")) {
+        $("a.firmware_flasher_button__label").removeClass("active");
+        $("a.firmware_flasher_button__link").removeClass("active");
     }
 
     GUI.timeout_remove("connecting"); // kill connecting timer
 
-    $("div.connection_button div.connection_button__label").text(i18n.getMessage("disconnect")).addClass("active");
-    $("div.connection_button a.connection_button__link").addClass("active");
+    $("div.connection_button__label").text(i18n.getMessage("disconnect")).addClass("active");
+    $("a.connection_button__link").addClass("active");
 
     $("#tabs ul.mode-disconnected").hide();
     $("#tabs ul.mode-connected-cli").show();

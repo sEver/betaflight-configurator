@@ -131,7 +131,7 @@ function startProcess() {
         }
     });
 
-    $("div.firmware_flasher_button_wrapper a.firmware_flasher_button__link").on("click", function () {
+    $("div.firmware_flasher_button a.firmware_flasher_button__link").on("click", function () {
         if ($("div#flashbutton a.firmware_flasher_button__label").hasClass("active") && $("div#flashbutton a.firmware_flasher_button__link").hasClass("active")) {
             $("div#flashbutton a.firmware_flasher_button__label").removeClass("active");
             $("div#flashbutton a.firmware_flasher_button__link").removeClass("active");
@@ -171,7 +171,7 @@ function startProcess() {
                     $("a.connection_button").click();
                 }
                 // this line is required but it triggers opening the firmware flasher tab again
-                $("div.firmware_flasher_button_wrapper a.firmware_flasher_button__link").click();
+                $("div.firmware_flasher_button a.firmware_flasher_button__link").click();
             } else if (GUI.allowedTabs.indexOf(tab) < 0) {
                 gui_log(i18n.getMessage("tabSwitchUpgradeRequired", [tabName]));
                 return;

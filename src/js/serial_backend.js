@@ -54,7 +54,7 @@ function disconnectHandler(event) {
 }
 
 export function initializeSerialBackend() {
-    $("div.connection_button_box a.connect").on("click", connectDisconnect);
+    $("div.connection_button_box a.connection_button").on("click", connectDisconnect);
 
     EventBus.$on("port-handler:auto-select-serial-device", function (device) {
         if (
@@ -202,7 +202,7 @@ function finishClose(finishedCallback) {
     PortHandler.portPickerDisabled = false;
 
     // reset connect / disconnect button
-    $("div.connection_button_box a.connect").removeClass("active");
+    $("div.connection_button_box a.connection_button").removeClass("active");
     $("div.connection_button_box div.connection_button_label").text(i18n.getMessage("connect"));
 
     // reset active sensor indicators
@@ -239,7 +239,7 @@ function setConnectionTimeout() {
 function resetConnection() {
     // reset connect / disconnect button
     $("div#connectbutton div.connection_button_label").text(i18n.getMessage("connect"));
-    $("div#connectbutton a.connect").removeClass("active");
+    $("div#connectbutton a.connection_button").removeClass("active");
 
     CONFIGURATOR.connectionValid = false;
     CONFIGURATOR.cliValid = false;
@@ -642,7 +642,7 @@ function onConnect() {
     GUI.timeout_remove("connecting"); // kill connecting timer
 
     $("div#connectbutton div.connection_button_label").text(i18n.getMessage("disconnect")).addClass("active");
-    $("div#connectbutton a.connect").addClass("active");
+    $("div#connectbutton a.connection_button").addClass("active");
 
     $("#tabs ul.mode-disconnected").hide();
     $("#tabs ul.mode-connected-cli").show();
@@ -815,7 +815,7 @@ export function reinitializeConnection(callback) {
     // In virtual mode reconnect when autoconnect is enabled
     if (CONFIGURATOR.virtualMode && PortHandler.portPicker.autoConnect) {
         return setTimeout(function () {
-            $("a.connect").trigger("click");
+            $("a.connection_button").trigger("click");
         }, 500);
     }
 

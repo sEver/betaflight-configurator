@@ -335,7 +335,7 @@ input[type="number"] {
 .connection_button_box {
     width: 52px;
     height: 52px;
-    a.connect {
+    a.connection_button {
         display: block;
         background-color: var(--primary-action);
         border: 1px solid var(--primary-action-border);
@@ -352,12 +352,12 @@ input[type="number"] {
             background-color: var(--primary-action-hover);
         }
     }
-    a.connect.disabled {
+    a.connection_button.disabled {
         background-color: var(--surface-500);
         pointer-events: none;
         cursor: default;
     }
-    a.connect.active {
+    a.connection_button.active {
         background-color: var(--error-500);
         border: 1px solid var(--error-600);
         transition: none;

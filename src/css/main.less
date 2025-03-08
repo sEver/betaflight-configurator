@@ -301,7 +301,7 @@ input[type="number"] {
 .firmware_flasher_button_box {
     width: 52px;
     height: 52px;
-    a.flash {
+    a.firmware_flasher_button {
         display: block;
         background-color: var(--primary-500);
         border: 1px solid var(--primary-600);
@@ -318,12 +318,12 @@ input[type="number"] {
             background-color: var(--primary-400);
         }
     }
-    a.flash.disabled {
+    a.firmware_flasher_button.disabled {
         background-color: var(--surface-500);
         pointer-events: none;
         cursor: default;
     }
-    a.flash.active {
+    a.firmware_flasher_button.active {
         background-color: var(--error-500);
         border: 1px solid var(--error-600);
         transition: none;

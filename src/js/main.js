@@ -102,7 +102,7 @@ function startProcess() {
     gui_log(i18n.getMessage("infoVersionOs", { operatingSystem: GUI.operating_system }));
     gui_log(i18n.getMessage("infoVersionConfigurator", { configuratorVersion: CONFIGURATOR.getDisplayVersion() }));
 
-    $(".connection_button_wrapper a.connection_button").removeClass("disabled");
+    $(".connection_button_wrapper a.connection_button__link").removeClass("disabled");
     // with Vue reactive system we don't need to call these,
     // our view is reactive to model changes
     // updateTopBarVersion();
@@ -168,7 +168,7 @@ function startProcess() {
 
             if (GUI.allowedTabs.indexOf(tab) < 0 && tab === "firmware_flasher") {
                 if (GUI.connected_to || GUI.connecting_to) {
-                    $("a.connection_button").click();
+                    $("a.connection_button__link").click();
                 }
                 // this line is required but it triggers opening the firmware flasher tab again
                 $("div.firmware_flasher_button a.firmware_flasher_button__link").click();
